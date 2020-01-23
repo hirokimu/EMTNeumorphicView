@@ -1,0 +1,6 @@
+framework module Pods_EMTNeumorphicView_Tests {
+  umbrella header "Pods-EMTNeumorphicView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

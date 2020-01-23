@@ -1,0 +1,16 @@
+PODS:
+  - EMTNeumorphicView (1.0.0)
+
+DEPENDENCIES:
+  - EMTNeumorphicView (from `../`)
+
+EXTERNAL SOURCES:
+  EMTNeumorphicView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EMTNeumorphicView: 98b54421d4d6147687d3ec37fc8c0804e5baab63
+
+PODFILE CHECKSUM: 04c5b6304f02b3a15ca77928d2ed01981669137b
+
+COCOAPODS: 1.8.4

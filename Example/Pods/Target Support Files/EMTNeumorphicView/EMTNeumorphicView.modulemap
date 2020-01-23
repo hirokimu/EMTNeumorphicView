@@ -1,0 +1,6 @@
+framework module EMTNeumorphicView {
+  umbrella header "EMTNeumorphicView-umbrella.h"
+
+  export *
+  module * { export * }
+}

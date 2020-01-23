@@ -1,0 +1,784 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		243DF39C8174DEE98C483C943E060F02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		2A5922DD24A459BE70DCD9449D9C3D29 /* Pods-EMTNeumorphicView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AE3B749E405FB69F12B29E399BE740 /* Pods-EMTNeumorphicView_Tests-dummy.m */; };
+		51321813BA07355609140E23D506354D /* UIColor+tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601D114C7C7952501CD3C5EA90BAE153 /* UIColor+tool.swift */; };
+		6149BA5D7C6A6C39C2B42C60DB8408C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		6323A74470B89E626C483EB82E5A6488 /* Pods-EMTNeumorphicView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D3CCBC7984F6B342B7B3137124608AF /* Pods-EMTNeumorphicView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65B9FDF78EB66B86307DCB3DB733DC1E /* Pods-EMTNeumorphicView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E02C262000B8E93D3CA9FDF725FAA4 /* Pods-EMTNeumorphicView_Example-dummy.m */; };
+		78E7A9EAAC735B9E349C31A006B6ED30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		7B2BF2A4DD2B598ECD1BCA3D9E080C73 /* EMTNeumorphicView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CBA46EAB975B28D7CD2213B8A514FE /* EMTNeumorphicView-dummy.m */; };
+		939FB1D58C5F4741EB4E66C579066443 /* Pods-EMTNeumorphicView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BC42DB9699815DC69C291FF20BA40DE0 /* Pods-EMTNeumorphicView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB4C23AF8C24743FB58CA993D9A37033 /* EMTNeumorphicView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 861FF2B1B6997D3EB88E9D547874AD8C /* EMTNeumorphicView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D572570A1405E02681483F2E4E34CDB7 /* EMTNeumorphicLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12254995D020B4F102997E24738D228 /* EMTNeumorphicLayer.swift */; };
+		DBECE51AE3302A98334D9BBF65E149D0 /* EMTNeumorphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF0EA7AA531917AB54745E40328D8D6 /* EMTNeumorphicView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0716A40A9B23858959FC1DE9E168FD47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CE6EE7AB67EEDB2785C26554B4B516A;
+			remoteInfo = EMTNeumorphicView;
+		};
+		DF9B2D0FAD90446FD7F7FDB60301A3C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2253822DCC2435B61726B3D1789C6904;
+			remoteInfo = "Pods-EMTNeumorphicView_Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03B870B81BBCE0B7EFC7A92D54A04FFE /* Pods-EMTNeumorphicView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EMTNeumorphicView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		0D3CCBC7984F6B342B7B3137124608AF /* Pods-EMTNeumorphicView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EMTNeumorphicView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		0D547436C4A9260B1133209BF019A2A1 /* Pods_EMTNeumorphicView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EMTNeumorphicView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2474E88463590474A3CD58418D4B83A9 /* Pods-EMTNeumorphicView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EMTNeumorphicView_Example.modulemap"; sourceTree = "<group>"; };
+		2DF0EA7AA531917AB54745E40328D8D6 /* EMTNeumorphicView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EMTNeumorphicView.swift; path = EMTNeumorphicView/Classes/EMTNeumorphicView.swift; sourceTree = "<group>"; };
+		2EAB78083B55AE7F4282ACE5C1AC617D /* EMTNeumorphicView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EMTNeumorphicView.modulemap; sourceTree = "<group>"; };
+		3164B97128AC24A56C08479C810D372C /* Pods-EMTNeumorphicView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EMTNeumorphicView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3FB88E5211E487FDCD0316C5C2FFECE5 /* Pods-EMTNeumorphicView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EMTNeumorphicView_Tests.modulemap"; sourceTree = "<group>"; };
+		46A77D7588A0F20925A10351BF2388EE /* Pods_EMTNeumorphicView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EMTNeumorphicView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CDC562046A208F477B625D5AE67795F /* EMTNeumorphicView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EMTNeumorphicView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54AE3B749E405FB69F12B29E399BE740 /* Pods-EMTNeumorphicView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EMTNeumorphicView_Tests-dummy.m"; sourceTree = "<group>"; };
+		601D114C7C7952501CD3C5EA90BAE153 /* UIColor+tool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+tool.swift"; path = "EMTNeumorphicView/Classes/UIColor+tool.swift"; sourceTree = "<group>"; };
+		62CBA46EAB975B28D7CD2213B8A514FE /* EMTNeumorphicView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EMTNeumorphicView-dummy.m"; sourceTree = "<group>"; };
+		6EF430B68F3602B1AA05BAC5CEC0690D /* Pods-EMTNeumorphicView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EMTNeumorphicView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		704DD6A5A2B84288E09EF42523E8AB3E /* Pods-EMTNeumorphicView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EMTNeumorphicView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7475248B33F101586BE64C0D21ADB3DF /* Pods-EMTNeumorphicView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EMTNeumorphicView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		755ACC0B5AD99AAB2529849064ED1FCE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		79E92D39A201A4FC00F31301D5CD2525 /* Pods-EMTNeumorphicView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EMTNeumorphicView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		861FF2B1B6997D3EB88E9D547874AD8C /* EMTNeumorphicView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EMTNeumorphicView-umbrella.h"; sourceTree = "<group>"; };
+		89294C1EF54395CBE96C05680A369094 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8EB4BCE0F0747E6F3CE90EE86FC64442 /* EMTNeumorphicView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = EMTNeumorphicView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		972CDA02F23F1B615FB438CF04D4ABEA /* Pods-EMTNeumorphicView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EMTNeumorphicView_Tests-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0C20CF1476C955D36FEF2F9AFC8FD02 /* EMTNeumorphicView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EMTNeumorphicView-prefix.pch"; sourceTree = "<group>"; };
+		A4072C99F886F17FF082BE1F9F68789D /* Pods-EMTNeumorphicView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EMTNeumorphicView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		A658EEE2243B03AC203B53F52F9A5F1D /* Pods-EMTNeumorphicView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EMTNeumorphicView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B12254995D020B4F102997E24738D228 /* EMTNeumorphicLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EMTNeumorphicLayer.swift; path = EMTNeumorphicView/Classes/EMTNeumorphicLayer.swift; sourceTree = "<group>"; };
+		BC42DB9699815DC69C291FF20BA40DE0 /* Pods-EMTNeumorphicView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EMTNeumorphicView_Example-umbrella.h"; sourceTree = "<group>"; };
+		C549D05FE8EE036C736F1F89F0CAEEA4 /* EMTNeumorphicView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EMTNeumorphicView-Info.plist"; sourceTree = "<group>"; };
+		C71B52E99CB0620C0B2F593B9B799D28 /* EMTNeumorphicView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EMTNeumorphicView.xcconfig; sourceTree = "<group>"; };
+		CA676677236518769B293D5C53D4774F /* Pods-EMTNeumorphicView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EMTNeumorphicView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D5E02C262000B8E93D3CA9FDF725FAA4 /* Pods-EMTNeumorphicView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EMTNeumorphicView_Example-dummy.m"; sourceTree = "<group>"; };
+		D5E392E59D7AD2C161D078EA5C026747 /* Pods-EMTNeumorphicView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EMTNeumorphicView_Example-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CC9EF32A286EFE9586BC84895B2B659 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				243DF39C8174DEE98C483C943E060F02 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		425EAC0C64B2B8297B90AB17DD636AB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6149BA5D7C6A6C39C2B42C60DB8408C7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		988D90447C8C336AE0C0A6DAB01A1D1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78E7A9EAAC735B9E349C31A006B6ED30 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1501A9F66EAE516DC323097D012505F1 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				8EB4BCE0F0747E6F3CE90EE86FC64442 /* EMTNeumorphicView.podspec */,
+				89294C1EF54395CBE96C05680A369094 /* LICENSE */,
+				755ACC0B5AD99AAB2529849064ED1FCE /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		179CEB510694EEDD203577B7415997CD /* Pods-EMTNeumorphicView_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3FB88E5211E487FDCD0316C5C2FFECE5 /* Pods-EMTNeumorphicView_Tests.modulemap */,
+				79E92D39A201A4FC00F31301D5CD2525 /* Pods-EMTNeumorphicView_Tests-acknowledgements.markdown */,
+				704DD6A5A2B84288E09EF42523E8AB3E /* Pods-EMTNeumorphicView_Tests-acknowledgements.plist */,
+				54AE3B749E405FB69F12B29E399BE740 /* Pods-EMTNeumorphicView_Tests-dummy.m */,
+				972CDA02F23F1B615FB438CF04D4ABEA /* Pods-EMTNeumorphicView_Tests-Info.plist */,
+				0D3CCBC7984F6B342B7B3137124608AF /* Pods-EMTNeumorphicView_Tests-umbrella.h */,
+				A658EEE2243B03AC203B53F52F9A5F1D /* Pods-EMTNeumorphicView_Tests.debug.xcconfig */,
+				03B870B81BBCE0B7EFC7A92D54A04FFE /* Pods-EMTNeumorphicView_Tests.release.xcconfig */,
+			);
+			name = "Pods-EMTNeumorphicView_Tests";
+			path = "Target Support Files/Pods-EMTNeumorphicView_Tests";
+			sourceTree = "<group>";
+		};
+		1C6E47D2D67E1AC09A3DAEBD2FD33FF5 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				214822E2D202353D963C5EB8DB8B4355 /* EMTNeumorphicView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		214822E2D202353D963C5EB8DB8B4355 /* EMTNeumorphicView */ = {
+			isa = PBXGroup;
+			children = (
+				B12254995D020B4F102997E24738D228 /* EMTNeumorphicLayer.swift */,
+				2DF0EA7AA531917AB54745E40328D8D6 /* EMTNeumorphicView.swift */,
+				601D114C7C7952501CD3C5EA90BAE153 /* UIColor+tool.swift */,
+				1501A9F66EAE516DC323097D012505F1 /* Pod */,
+				D5CB624480C9D206E35F30EF32AB71B6 /* Support Files */,
+			);
+			name = EMTNeumorphicView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		4B576AC481FBA196E19D18140FA01923 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CDC562046A208F477B625D5AE67795F /* EMTNeumorphicView.framework */,
+				46A77D7588A0F20925A10351BF2388EE /* Pods_EMTNeumorphicView_Example.framework */,
+				0D547436C4A9260B1133209BF019A2A1 /* Pods_EMTNeumorphicView_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7368EE14E3FE3A92E1155C34490151DD /* Pods-EMTNeumorphicView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				2474E88463590474A3CD58418D4B83A9 /* Pods-EMTNeumorphicView_Example.modulemap */,
+				CA676677236518769B293D5C53D4774F /* Pods-EMTNeumorphicView_Example-acknowledgements.markdown */,
+				6EF430B68F3602B1AA05BAC5CEC0690D /* Pods-EMTNeumorphicView_Example-acknowledgements.plist */,
+				D5E02C262000B8E93D3CA9FDF725FAA4 /* Pods-EMTNeumorphicView_Example-dummy.m */,
+				A4072C99F886F17FF082BE1F9F68789D /* Pods-EMTNeumorphicView_Example-frameworks.sh */,
+				D5E392E59D7AD2C161D078EA5C026747 /* Pods-EMTNeumorphicView_Example-Info.plist */,
+				BC42DB9699815DC69C291FF20BA40DE0 /* Pods-EMTNeumorphicView_Example-umbrella.h */,
+				3164B97128AC24A56C08479C810D372C /* Pods-EMTNeumorphicView_Example.debug.xcconfig */,
+				7475248B33F101586BE64C0D21ADB3DF /* Pods-EMTNeumorphicView_Example.release.xcconfig */,
+			);
+			name = "Pods-EMTNeumorphicView_Example";
+			path = "Target Support Files/Pods-EMTNeumorphicView_Example";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1C6E47D2D67E1AC09A3DAEBD2FD33FF5 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				4B576AC481FBA196E19D18140FA01923 /* Products */,
+				E7DC515D240729C655BBC8ACEA5F3EA7 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5CB624480C9D206E35F30EF32AB71B6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EAB78083B55AE7F4282ACE5C1AC617D /* EMTNeumorphicView.modulemap */,
+				C71B52E99CB0620C0B2F593B9B799D28 /* EMTNeumorphicView.xcconfig */,
+				62CBA46EAB975B28D7CD2213B8A514FE /* EMTNeumorphicView-dummy.m */,
+				C549D05FE8EE036C736F1F89F0CAEEA4 /* EMTNeumorphicView-Info.plist */,
+				A0C20CF1476C955D36FEF2F9AFC8FD02 /* EMTNeumorphicView-prefix.pch */,
+				861FF2B1B6997D3EB88E9D547874AD8C /* EMTNeumorphicView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/EMTNeumorphicView";
+			sourceTree = "<group>";
+		};
+		E7DC515D240729C655BBC8ACEA5F3EA7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7368EE14E3FE3A92E1155C34490151DD /* Pods-EMTNeumorphicView_Example */,
+				179CEB510694EEDD203577B7415997CD /* Pods-EMTNeumorphicView_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		64716624DB40638607CF4ECD09780BDF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6323A74470B89E626C483EB82E5A6488 /* Pods-EMTNeumorphicView_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85E026E2EDC875ACCAD900DA2ADADCF6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				939FB1D58C5F4741EB4E66C579066443 /* Pods-EMTNeumorphicView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7DACF02463677FABD4450920B6D292 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4C23AF8C24743FB58CA993D9A37033 /* EMTNeumorphicView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2253822DCC2435B61726B3D1789C6904 /* Pods-EMTNeumorphicView_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85C59E12A3438CF309485D5C46254E15 /* Build configuration list for PBXNativeTarget "Pods-EMTNeumorphicView_Example" */;
+			buildPhases = (
+				85E026E2EDC875ACCAD900DA2ADADCF6 /* Headers */,
+				09016031AF7EFF20A17E77573EC777EF /* Sources */,
+				425EAC0C64B2B8297B90AB17DD636AB7 /* Frameworks */,
+				B22CC7B6E8E3166E95792583D86D9C35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1DD920950025638D7C90DBB465274A2E /* PBXTargetDependency */,
+			);
+			name = "Pods-EMTNeumorphicView_Example";
+			productName = "Pods-EMTNeumorphicView_Example";
+			productReference = 46A77D7588A0F20925A10351BF2388EE /* Pods_EMTNeumorphicView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8CE6EE7AB67EEDB2785C26554B4B516A /* EMTNeumorphicView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B447BF0A49CA0F61C057C8077AD7AB4 /* Build configuration list for PBXNativeTarget "EMTNeumorphicView" */;
+			buildPhases = (
+				AC7DACF02463677FABD4450920B6D292 /* Headers */,
+				9BE6596799A3D9CDE8558E6E14F6C998 /* Sources */,
+				988D90447C8C336AE0C0A6DAB01A1D1D /* Frameworks */,
+				1AE334D8D0C1DF4A34382F07BEDA0CE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EMTNeumorphicView;
+			productName = EMTNeumorphicView;
+			productReference = 4CDC562046A208F477B625D5AE67795F /* EMTNeumorphicView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E3EB0353300DCA10E978A697B4B7BEF5 /* Pods-EMTNeumorphicView_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDBCAB3889E4F3735CD537208D948A7E /* Build configuration list for PBXNativeTarget "Pods-EMTNeumorphicView_Tests" */;
+			buildPhases = (
+				64716624DB40638607CF4ECD09780BDF /* Headers */,
+				03F372D03F7C6DC21FB5928635C88D34 /* Sources */,
+				1CC9EF32A286EFE9586BC84895B2B659 /* Frameworks */,
+				CDF703FEC6D20FE98A14776CDF81EC31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A833E1476F0E2F99D8FB8BB0539384B /* PBXTargetDependency */,
+			);
+			name = "Pods-EMTNeumorphicView_Tests";
+			productName = "Pods-EMTNeumorphicView_Tests";
+			productReference = 0D547436C4A9260B1133209BF019A2A1 /* Pods_EMTNeumorphicView_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					8CE6EE7AB67EEDB2785C26554B4B516A = {
+						LastSwiftMigration = 1130;
+					};
+				};
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 4B576AC481FBA196E19D18140FA01923 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CE6EE7AB67EEDB2785C26554B4B516A /* EMTNeumorphicView */,
+				2253822DCC2435B61726B3D1789C6904 /* Pods-EMTNeumorphicView_Example */,
+				E3EB0353300DCA10E978A697B4B7BEF5 /* Pods-EMTNeumorphicView_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AE334D8D0C1DF4A34382F07BEDA0CE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B22CC7B6E8E3166E95792583D86D9C35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDF703FEC6D20FE98A14776CDF81EC31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03F372D03F7C6DC21FB5928635C88D34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5922DD24A459BE70DCD9449D9C3D29 /* Pods-EMTNeumorphicView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09016031AF7EFF20A17E77573EC777EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65B9FDF78EB66B86307DCB3DB733DC1E /* Pods-EMTNeumorphicView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE6596799A3D9CDE8558E6E14F6C998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D572570A1405E02681483F2E4E34CDB7 /* EMTNeumorphicLayer.swift in Sources */,
+				7B2BF2A4DD2B598ECD1BCA3D9E080C73 /* EMTNeumorphicView-dummy.m in Sources */,
+				DBECE51AE3302A98334D9BBF65E149D0 /* EMTNeumorphicView.swift in Sources */,
+				51321813BA07355609140E23D506354D /* UIColor+tool.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1DD920950025638D7C90DBB465274A2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EMTNeumorphicView;
+			target = 8CE6EE7AB67EEDB2785C26554B4B516A /* EMTNeumorphicView */;
+			targetProxy = 0716A40A9B23858959FC1DE9E168FD47 /* PBXContainerItemProxy */;
+		};
+		6A833E1476F0E2F99D8FB8BB0539384B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-EMTNeumorphicView_Example";
+			target = 2253822DCC2435B61726B3D1789C6904 /* Pods-EMTNeumorphicView_Example */;
+			targetProxy = DF9B2D0FAD90446FD7F7FDB60301A3C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0CA0EF3CD94ED053896234E606EA7A64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C71B52E99CB0620C0B2F593B9B799D28 /* EMTNeumorphicView.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EMTNeumorphicView/EMTNeumorphicView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EMTNeumorphicView/EMTNeumorphicView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EMTNeumorphicView/EMTNeumorphicView.modulemap";
+				PRODUCT_MODULE_NAME = EMTNeumorphicView;
+				PRODUCT_NAME = EMTNeumorphicView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		409015E645834CDE912E9AD983E0A693 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7475248B33F101586BE64C0D21ADB3DF /* Pods-EMTNeumorphicView_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EMTNeumorphicView_Example/Pods-EMTNeumorphicView_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EMTNeumorphicView_Example/Pods-EMTNeumorphicView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5AF42091E8106484E91F29AC9D8C53DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A658EEE2243B03AC203B53F52F9A5F1D /* Pods-EMTNeumorphicView_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EMTNeumorphicView_Tests/Pods-EMTNeumorphicView_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EMTNeumorphicView_Tests/Pods-EMTNeumorphicView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		96520E9D56531ECAD7C65817F051E390 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3164B97128AC24A56C08479C810D372C /* Pods-EMTNeumorphicView_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EMTNeumorphicView_Example/Pods-EMTNeumorphicView_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EMTNeumorphicView_Example/Pods-EMTNeumorphicView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B0087CB4594321EF41619F3181FE120E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CEF8CC29A0D184FC35745F852599DEB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03B870B81BBCE0B7EFC7A92D54A04FFE /* Pods-EMTNeumorphicView_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EMTNeumorphicView_Tests/Pods-EMTNeumorphicView_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EMTNeumorphicView_Tests/Pods-EMTNeumorphicView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5EA417BBC1DA5E360AEC8BDB7C5A254 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C71B52E99CB0620C0B2F593B9B799D28 /* EMTNeumorphicView.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EMTNeumorphicView/EMTNeumorphicView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EMTNeumorphicView/EMTNeumorphicView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EMTNeumorphicView/EMTNeumorphicView.modulemap";
+				PRODUCT_MODULE_NAME = EMTNeumorphicView;
+				PRODUCT_NAME = EMTNeumorphicView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */,
+				B0087CB4594321EF41619F3181FE120E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85C59E12A3438CF309485D5C46254E15 /* Build configuration list for PBXNativeTarget "Pods-EMTNeumorphicView_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96520E9D56531ECAD7C65817F051E390 /* Debug */,
+				409015E645834CDE912E9AD983E0A693 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B447BF0A49CA0F61C057C8077AD7AB4 /* Build configuration list for PBXNativeTarget "EMTNeumorphicView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5EA417BBC1DA5E360AEC8BDB7C5A254 /* Debug */,
+				0CA0EF3CD94ED053896234E606EA7A64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDBCAB3889E4F3735CD537208D948A7E /* Build configuration list for PBXNativeTarget "Pods-EMTNeumorphicView_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AF42091E8106484E91F29AC9D8C53DE /* Debug */,
+				CEF8CC29A0D184FC35745F852599DEB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
