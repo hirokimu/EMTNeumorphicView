@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'EMTNeumorphicView_Example' do
+  pod 'EMTNeumorphicView', :path => '../'
+
+  target 'EMTNeumorphicView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
