@@ -25,16 +25,18 @@ public enum EMTNeumorphicLayerDepthType: Int {
 }
 
 fileprivate struct EMTNeumorphicLayerProps {
-    var brightness: CGFloat = 1.15
+    var lightShadowOpacity: Float = 1
+    var darkShadowOpacity: Float = 0.3
     var elementColor: CGColor?
     var elementBackgroundColor: CGColor = UIColor.white.cgColor
     var depthType: EMTNeumorphicLayerDepthType = .convex
     var cornerType: EMTNeumorphicLayerCornerType = .all
-    var elementDepth: CGFloat = 100 * 0.143 / 2
+    var elementDepth: CGFloat = 5
     var edged: Bool = false
     var cornerRadius: CGFloat = 0
     static func == (lhs: EMTNeumorphicLayerProps, rhs: EMTNeumorphicLayerProps) -> Bool {
-        return lhs.brightness == rhs.brightness &&
+        return lhs.lightShadowOpacity == rhs.lightShadowOpacity &&
+            lhs.darkShadowOpacity == rhs.darkShadowOpacity &&
             lhs.elementColor === rhs.elementColor &&
             lhs.elementBackgroundColor === rhs.elementBackgroundColor &&
             lhs.depthType == rhs.depthType &&
@@ -55,10 +57,19 @@ public class EMTNeumorphicLayer: CALayer {
 
     private var props: EMTNeumorphicLayerProps?
     
-    /// This value multiplies the brightness of light shadow. Default is 2.
-    public var brightness: CGFloat = 2 {
+    /// Default is 1.
+    public var lightShadowOpacity: Float = 1 {
         didSet {
-            if oldValue != brightness {
+            if oldValue != lightShadowOpacity {
+                setNeedsDisplay()
+            }
+        }
+    }
+    
+    /// Default is 0.3.
+    public var darkShadowOpacity: Float = 0.3 {
+        didSet {
+            if oldValue != darkShadowOpacity {
                 setNeedsDisplay()
             }
         }
@@ -99,8 +110,8 @@ public class EMTNeumorphicLayer: CALayer {
         }
     }
     
-    /// Default is 7.15 px
-    public var elementDepth: CGFloat = 100 * 0.143 / 2 {
+    /// Default is 5.
+    public var elementDepth: CGFloat = 5 {
         didSet {
             if oldValue != elementDepth {
                 setNeedsDisplay()
@@ -153,7 +164,8 @@ public class EMTNeumorphicLayer: CALayer {
         currentProps.cornerType = cornerType
         currentProps.depthType = depthType
         currentProps.edged = edged
-        currentProps.brightness = brightness
+        currentProps.lightShadowOpacity = lightShadowOpacity
+        currentProps.darkShadowOpacity = darkShadowOpacity
         currentProps.elementColor = elementColor
         currentProps.elementBackgroundColor = elementBackgroundColor
         currentProps.elementDepth = elementDepth
@@ -166,9 +178,9 @@ public class EMTNeumorphicLayer: CALayer {
 
         // generate shadow color
         let color = elementColor ?? elementBackgroundColor
-        lightSideColor = UIColor(cgColor: elementBackgroundColor).getTransformedColor(saturation: 0.5, brightness: brightness).cgColor
-        darkSideColor = UIColor(cgColor: elementBackgroundColor).getTransformedColor(saturation: 0.1, brightness: 0).cgColor
         lightSideColor = UIColor.white.cgColor
+        darkSideColor = UIColor(cgColor: elementBackgroundColor).getTransformedColor(saturation: 0.1, brightness: 0).cgColor
+ 
         // add sublayers
         if colorLayer == nil {
             colorLayer = CALayer()
@@ -205,7 +217,7 @@ public class EMTNeumorphicLayer: CALayer {
         // initialize sublayers
         shadowLayer?.initialize(bounds: bounds, mode: .darkSide, props: props!, color: darkSideColor)
         lightLayer?.initialize(bounds: bounds, mode: .lightSide, props: props!, color: lightSideColor)
-        //lightLayer?.initialize(bounds: bounds, mode: .lightSide, props: props!, color: UIColor.red.cgColor)
+
         if currentProps.edged {
             edgeLayer?.initialize(bounds: bounds, props: props!, color: lightSideColor)
         }
@@ -259,8 +271,7 @@ fileprivate class EMTShadowLayerBase: CALayer {
 }
 
 fileprivate class EMTShadowLayer: EMTShadowLayerBase {
- 
-    private let expandWidth: CGFloat = 1
+
     private var lightLayer: CALayer?
     
     func initialize(bounds: CGRect, mode: EMTShadowLayerMode, props: EMTNeumorphicLayerProps, color: CGColor) {
@@ -289,7 +300,7 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
         // prepare shadow parameters
         let shadowRadius = props.elementDepth
         let offsetWidth: CGFloat = shadowRadius / 2
-        let cornerRadii: CGSize = CGSize(width: props.cornerRadius, height: props.cornerRadius)
+        let cornerRadii: CGSize = CGSize(width: props.cornerRadius - offsetWidth, height: props.cornerRadius - offsetWidth)
     
         var shadowX: CGFloat = 0
         var shadowY: CGFloat = 0
@@ -310,7 +321,7 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
         shadowPath = path.cgPath
         shadowColor = color
         shadowOffset = CGSize(width: shadowX, height: shadowY)
-        shadowOpacity = mode == .lightSide ? 1 : 0.3
+        shadowOpacity = mode == .lightSide ? props.lightShadowOpacity : props.darkShadowOpacity
         self.shadowRadius = shadowRadius
     }
     
@@ -321,12 +332,13 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
         frame = bounds
         
         // prepare shadow parameters
-        let shadowRadius = mode == .lightSide ? props.elementDepth / 2 : props.elementDepth / 2
-        
-        let cornerRadii: CGSize = CGSize(width: props.cornerRadius, height: props.cornerRadius)
-        let cornerRadiusInner = props.cornerRadius - (sqrt(2) * expandWidth)
-        let cornerRadiiInner: CGSize = CGSize(width: cornerRadiusInner, height: cornerRadiusInner)
+        let shadowRadius = props.elementDepth * 0.75
 
+        let gap: CGFloat = 1
+
+        let cornerRadii: CGSize = CGSize(width: props.cornerRadius + gap, height: props.cornerRadius + gap)
+        let cornerRadiusInner = props.cornerRadius - gap
+        let cornerRadiiInner: CGSize = CGSize(width: cornerRadiusInner, height: cornerRadiusInner)
         var shadowX: CGFloat = 0
         var shadowY: CGFloat = 0
         var shadowWidth: CGFloat = width
@@ -342,10 +354,10 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
             shadowHeight += shadowRadius * 4
         case .middleRow:
             if mode == .lightSide {
-                shadowWidth += shadowRadius * 2 + 0.5
+                shadowWidth += shadowRadius * 3
                 shadowHeight += shadowRadius * 6
                 shadowY = -(shadowRadius * 3)
-                shadowX = -(shadowRadius * 2)
+                shadowX = -(shadowRadius * 3)
             }
             else {
                 shadowWidth += shadowRadius * 2
@@ -358,20 +370,19 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
         }
 
         // add shadow
-        var shadowBounds = CGRect(x: 0, y: 0, width: shadowWidth, height: shadowHeight)
-        if mode == .darkSide { shadowBounds = shadowBounds.insetBy(dx: -1, dy: -1) }
+        let shadowBounds = CGRect(x: 0, y: 0, width: shadowWidth, height: shadowHeight)
         var path: UIBezierPath
         var innerPath: UIBezierPath
         
         if props.cornerType == .middleRow {
-            path = UIBezierPath(rect: shadowBounds)
-            innerPath = UIBezierPath(rect: shadowBounds.insetBy(dx: expandWidth, dy: expandWidth)).reversing()
+            path = UIBezierPath(rect: shadowBounds.insetBy(dx: -gap, dy: -gap))
+            innerPath = UIBezierPath(rect: shadowBounds.insetBy(dx: gap, dy: gap)).reversing()
         }
         else {
-            path = UIBezierPath(roundedRect:shadowBounds,
+            path = UIBezierPath(roundedRect:shadowBounds.insetBy(dx: -gap, dy: -gap),
                                 byRoundingCorners: corners,
                                 cornerRadii: cornerRadii)
-            innerPath = UIBezierPath(roundedRect: shadowBounds.insetBy(dx: expandWidth, dy: expandWidth),
+            innerPath = UIBezierPath(roundedRect: shadowBounds.insetBy(dx: gap, dy: gap),
                                      byRoundingCorners: corners,
                                      cornerRadii: cornerRadiiInner).reversing()
         }
@@ -381,7 +392,7 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
         masksToBounds = true
         shadowColor = color
         shadowOffset = CGSize(width: shadowX, height: shadowY)
-        shadowOpacity = 1
+        shadowOpacity = mode == .lightSide ? props.lightShadowOpacity : props.darkShadowOpacity
         self.shadowRadius = shadowRadius
         
         if mode == .lightSide {
@@ -394,7 +405,7 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
             lightLayer?.masksToBounds = true
             lightLayer?.shadowColor = shadowColor
             lightLayer?.shadowOffset = CGSize(width: shadowX, height: shadowY)
-            lightLayer?.shadowOpacity = 1
+            lightLayer?.shadowOpacity = props.lightShadowOpacity
             lightLayer?.shadowRadius = shadowRadius
             lightLayer?.shouldRasterize = true
         }
@@ -430,7 +441,7 @@ fileprivate class EMTEdgeLayer: EMTShadowLayerBase {
         
         var edgeBounds = bounds
         let cornerRadii: CGSize = CGSize(width: props.cornerRadius, height: props.cornerRadius)
-        let cornerRadiusEdge = props.cornerRadius - (sqrt(2) * 0.75)
+        let cornerRadiusEdge = props.cornerRadius - 0.75
         let cornerRadiiEdge: CGSize = CGSize(width: cornerRadiusEdge, height: cornerRadiusEdge)
         
         if props.depthType == .convex {
@@ -441,7 +452,7 @@ fileprivate class EMTEdgeLayer: EMTShadowLayerBase {
             shadowPath = path.cgPath
             shadowColor = color
             shadowOffset = CGSize.zero
-            shadowOpacity = 0.1
+            shadowOpacity = min(props.lightShadowOpacity * 1.5, 1)
             shadowRadius = 0
         }
         else {
@@ -475,7 +486,7 @@ fileprivate class EMTEdgeLayer: EMTShadowLayerBase {
             shadowPath = path.cgPath
             shadowColor = color
             shadowOffset = CGSize(width: 0, height: shadowY)
-            shadowOpacity = 0.1
+            shadowOpacity = min(props.lightShadowOpacity * 1.5, 1)
             shadowRadius = 0
         }
     }

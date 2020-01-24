@@ -29,8 +29,8 @@ Each view is a subclass of UIView / UIButton/ UITableViewCell.
     myView.neumorphicLayer?.cornerRadius = 24
     // set convex or concave.
     myView.neumorphicLayer?.depthType = .concave
-    // set elementDepth (corresponds to shadowRadius). Default is 7.15
-    myView.neumorphicLayer?.elementDepth = 10
+    // set elementDepth (corresponds to shadowRadius). Default is 5
+    myView.neumorphicLayer?.elementDepth = 7
 ```
 
 ### EMTNeumorphicButton
@@ -86,13 +86,16 @@ Basically equivalent to EMTNeumorphicView.
 ### Other Properties
 
 ```swift
-    /// This value multiplies the brightness of light shadow. Default is 2.
-    myView.neumorphicLayer?.brightness = 3
+    // Default is 1.
+    myView.neumorphicLayer?.lightShadowOpacity = 1
 
-    /// Optional. if it is nil (default), elementBackgroundColor will be used as element color.
+    // Default is 0.3.
+    myView.neumorphicLayer?.darkShadowOpacity = 1
+
+    // Optional. if it is nil (default), elementBackgroundColor will be used as element color.
     myView.neumorphicLayer?.elementColor = UIColor.red.cgColor
     
-    /// Adding a very thin border on the edge of the element.
+    // Adding a thin border on the edge of the element.
     myView.neumorphicLayer?.edged = true
 ```
 

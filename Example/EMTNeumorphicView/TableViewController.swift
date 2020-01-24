@@ -26,7 +26,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(RGB: 0xEFEDEE)
+        view.backgroundColor = UIColor(RGB: 0xF0EEEF)
         let table = UITableView(frame: CGRect(), style: .grouped)
         view.insertSubview(table, at: 0)
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -150,6 +150,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let cell = cell as? EMTNeumorphicTableCell {
             cell.neumorphicLayer?.cornerType = type
             cell.neumorphicLayer?.cornerRadius = 12
+            cell.neumorphicLayer?.edged = true
             cell.neumorphicLayer?.elementBackgroundColor = view.backgroundColor?.cgColor ?? UIColor.white.cgColor
         }
         cell?.textLabel?.text = rowTitles[indexPath.section][indexPath.row]
