@@ -438,15 +438,16 @@ fileprivate class EMTEdgeLayer: EMTShadowLayerBase {
         var shadowY: CGFloat = 0
         var path: UIBezierPath
         var innerPath: UIBezierPath
+        let edgeWidth: CGFloat = 0.75
         
         var edgeBounds = bounds
         let cornerRadii: CGSize = CGSize(width: props.cornerRadius, height: props.cornerRadius)
-        let cornerRadiusEdge = props.cornerRadius - 0.75
+        let cornerRadiusEdge = props.cornerRadius - edgeWidth
         let cornerRadiiEdge: CGSize = CGSize(width: cornerRadiusEdge, height: cornerRadiusEdge)
         
         if props.depthType == .convex {
             path = UIBezierPath(roundedRect: edgeBounds, byRoundingCorners: corners, cornerRadii: cornerRadii)
-            let innerPath = UIBezierPath(roundedRect: edgeBounds.insetBy(dx: 0.75, dy: 0.75),
+            let innerPath = UIBezierPath(roundedRect: edgeBounds.insetBy(dx: edgeWidth, dy: edgeWidth),
                                     byRoundingCorners: corners, cornerRadii: cornerRadiiEdge).reversing()
             path.append(innerPath)
             shadowPath = path.cgPath
@@ -474,11 +475,11 @@ fileprivate class EMTEdgeLayer: EMTShadowLayerBase {
             // shadow path
             if props.cornerType == .middleRow {
                 path = UIBezierPath(rect: edgeBounds)
-                innerPath = UIBezierPath(rect: edgeBounds.insetBy(dx: 0.75, dy: 0.75)).reversing()
+                innerPath = UIBezierPath(rect: edgeBounds.insetBy(dx: edgeWidth, dy: edgeWidth)).reversing()
             }
             else {
                 path = UIBezierPath(roundedRect: edgeBounds, byRoundingCorners: corners, cornerRadii: cornerRadii)
-                innerPath = UIBezierPath(roundedRect: edgeBounds.insetBy(dx: 0.75, dy: 0.75),
+                innerPath = UIBezierPath(roundedRect: edgeBounds.insetBy(dx: edgeWidth, dy: edgeWidth),
                                         byRoundingCorners: corners, cornerRadii: cornerRadiiEdge).reversing()
             }
             
@@ -523,16 +524,21 @@ fileprivate class EMTGradientMaskLayer: CALayer {
 
     override func draw(in ctx: CGContext) {
         let rectTR = getTopRightCornerRect(size: frame.size, radius: shadowCornerRadius)
-        let rectTR_BR = CGPoint(x: rectTR.origin.x + shadowCornerRadius, y: rectTR.origin.y + shadowCornerRadius)
+        let rectTR_BR = CGPoint(x: rectTR.maxX, y: rectTR.maxY)
         let rectBL = getBottomLeftCornerRect(size: frame.size, radius: shadowCornerRadius)
-        let rectBL_BR = CGPoint(x: rectBL.origin.x + shadowCornerRadius, y: rectBL.origin.y + shadowCornerRadius)
+        let rectBL_BR = CGPoint(x: rectBL.maxX, y: rectBL.maxY)
+        
+        let color = UIColor.black.cgColor
+        
         guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
-                                        colors: [UIColor.black.cgColor, UIColor.clear.cgColor] as CFArray,
+                                        colors: [color, UIColor.clear.cgColor] as CFArray,
                                         locations: [0, 1]) else { return }
+
+        
         if cornerType == .all {
             if shadowLayerMode == .lightSide {
                 if frame.size.width > shadowCornerRadius * 2 && frame.size.height > shadowCornerRadius * 2 {
-                    ctx.setFillColor(UIColor.black.cgColor)
+                    ctx.setFillColor(color)
                     ctx.fill(CGRect(x: shadowCornerRadius,
                                     y: shadowCornerRadius,
                                     width: frame.size.width - shadowCornerRadius,
@@ -552,7 +558,7 @@ fileprivate class EMTGradientMaskLayer: CALayer {
             }
             else {
                 if frame.size.width > shadowCornerRadius * 2 && frame.size.height > shadowCornerRadius * 2 {
-                ctx.setFillColor(UIColor.black.cgColor)
+                    ctx.setFillColor(color)
                     ctx.fill(CGRect(x: 0,
                                     y: 0,
                                     width: frame.size.width - shadowCornerRadius,
@@ -573,7 +579,7 @@ fileprivate class EMTGradientMaskLayer: CALayer {
         }
         else if cornerType == .topRow {
             if shadowLayerMode == .lightSide {
-                ctx.setFillColor(UIColor.black.cgColor)
+                ctx.setFillColor(color)
                 ctx.fill(CGRect(x: frame.size.width - shadowCornerRadius,
                                 y: shadowCornerRadius,
                                 width: frame.size.width,
@@ -586,7 +592,7 @@ fileprivate class EMTGradientMaskLayer: CALayer {
                 ctx.restoreGState()
             }
             else {
-                ctx.setFillColor(UIColor.black.cgColor)
+                ctx.setFillColor(color)
                 ctx.fill(CGRect(x: 0,
                                 y: 0,
                                 width: frame.size.width - shadowCornerRadius,
@@ -600,8 +606,8 @@ fileprivate class EMTGradientMaskLayer: CALayer {
             }
         }
         else if cornerType == .bottomRow {
+            ctx.setFillColor(color)
             if shadowLayerMode == .lightSide {
-                ctx.setFillColor(UIColor.black.cgColor)
                 ctx.fill(CGRect(x: shadowCornerRadius,
                                 y: 0,
                                 width: frame.size.width - shadowCornerRadius,
@@ -614,7 +620,6 @@ fileprivate class EMTGradientMaskLayer: CALayer {
                 ctx.restoreGState()
             }
             else {
-                ctx.setFillColor(UIColor.black.cgColor)
                 ctx.fill(CGRect(x: 0,
                                 y: 0,
                                 width: shadowCornerRadius,
