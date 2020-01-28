@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "EMTNeumorphicView",
+    platforms: [.iOS(.v13)],
     products: [
         .library(name: "EMTNeumorphicView", targets: ["EMTNeumorphicView"])
     ],
