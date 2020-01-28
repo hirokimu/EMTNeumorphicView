@@ -3,12 +3,15 @@ UIKit views with Neumorphism style design.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://mit-license.org) 
 [![Language](https://img.shields.io/badge/language-swift-orange.svg?style=flat)](https://developer.apple.com/swift)
+[![Pod Version](https://img.shields.io/cocoapods/v/EMTNeumorphicView.svg?style=flat)](http://cocoapods.org/pods/EMTNeumorphicView)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
 <img src="https://www.emotionale.jp/images/git/emtneumorphicview/screen.jpg" width="480px">
 
 ## Installation
-EMTNeumorphicView is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+EMTNeumorphicView is available through CocoaPods / Carthage / SwiftPM.
+To install it via CocoaPods, simply add the following line to your Podfile:
 
 ```ruby
 pod 'EMTNeumorphicView'
