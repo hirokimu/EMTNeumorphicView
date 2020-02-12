@@ -12,15 +12,15 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                 UINavigationControllerDelegate {
 
     private var table: UITableView?
-    var rowTitles = [
+    var rowData: [[String: Any]] = [
         [
-            "cornerType = .all",
+            "depthType": EMTNeumorphicLayerDepthType.concave,
+            "rows": ["cornerType = .all"],
+            "edged": true
         ],
         [
-            "cornerType = .topRow",
-            "cornerType = .middleRow",
-            "cornerType = .middleRow",
-            "cornerType = .bottomRow"
+            "depthType": EMTNeumorphicLayerDepthType.convex,
+            "rows": ["cornerType = .topRow", "cornerType = .middleRow", "cornerType = .middleRow", "cornerType = .bottomRow"],
         ]
     ]
 
@@ -40,14 +40,16 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         table.dataSource = self
         table.backgroundColor = UIColor.clear
         table.separatorStyle = .none
+        table.clipsToBounds = false
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return rowTitles.count
+        return rowData.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowTitles[section].count
+        guard let rows = rowData[section]["rows"] as? [String] else { return 0 }
+        return rows.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -129,12 +131,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var type: EMTNeumorphicLayerCornerType = .all
-        let rowCount: Int = rowTitles[indexPath.section].count
-        if rowCount > 1 {
+        let dict: [String: Any] = rowData[indexPath.section]
+        let rows = dict["rows"] as? [String] ?? []
+        if rows.count > 1 {
             if indexPath.row == 0 {
                 type = .topRow
             }
-            else if indexPath.row == rowCount - 1 {
+            else if indexPath.row == rows.count - 1 {
                 type = .bottomRow
             }
             else {
@@ -142,7 +145,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         let cellId = String(format: "cell%d", type.rawValue)
-        
+
         var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
         if cell == nil {
             cell = EMTNeumorphicTableCell(style: .default, reuseIdentifier: cellId)
@@ -150,10 +153,11 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let cell = cell as? EMTNeumorphicTableCell {
             cell.neumorphicLayer?.cornerType = type
             cell.neumorphicLayer?.cornerRadius = 12
-            cell.neumorphicLayer?.edged = true
+            cell.neumorphicLayer?.depthType = dict["depthType"] as? EMTNeumorphicLayerDepthType ?? .convex
+            cell.neumorphicLayer?.edged = dict["edged"] as? Bool ?? false
             cell.neumorphicLayer?.elementBackgroundColor = view.backgroundColor?.cgColor ?? UIColor.white.cgColor
         }
-        cell?.textLabel?.text = rowTitles[indexPath.section][indexPath.row]
+        cell?.textLabel?.text = rows[indexPath.row]
         cell?.accessoryType = .disclosureIndicator
         return cell!
     }

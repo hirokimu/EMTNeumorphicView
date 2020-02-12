@@ -61,6 +61,9 @@ Basically equivalent to EMTNeumorphicView.
 
 ### EMTNeumorphicTableCell
 
+Do not use convex and concave together in the same section. 
+It will cause a bad looking result.
+
 ```swift
     // change neumorphicLayer?.cornerType according to its row position
     var type: EMTNeumorphicLayerCornerType = .all

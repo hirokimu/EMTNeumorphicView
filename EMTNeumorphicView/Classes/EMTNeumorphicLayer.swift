@@ -10,6 +10,13 @@ import UIKit
 
 public protocol EMTNeumorphicElementProtocol : UIView {
     var neumorphicLayer: EMTNeumorphicLayer? { get }
+    func depthTypeUpdated(to type: EMTNeumorphicLayerDepthType)
+}
+
+public extension EMTNeumorphicElementProtocol {
+    func depthTypeUpdated(to type: EMTNeumorphicLayerDepthType) {
+        //
+    }
 }
 
 public enum EMTNeumorphicLayerCornerType: Int {
@@ -56,6 +63,8 @@ public class EMTNeumorphicLayer: CALayer {
     // MARK: Properties
 
     private var props: EMTNeumorphicLayerProps?
+
+    public weak var masterView: EMTNeumorphicElementProtocol?
     
     /// Default is 1.
     public var lightShadowOpacity: Float = 1 {
@@ -96,6 +105,7 @@ public class EMTNeumorphicLayer: CALayer {
     public var depthType: EMTNeumorphicLayerDepthType = .convex {
         didSet {
             if oldValue != depthType {
+                masterView?.depthTypeUpdated(to: depthType)
                 setNeedsDisplay()
             }
         }
@@ -225,7 +235,7 @@ public class EMTNeumorphicLayer: CALayer {
             edgeLayer?.reset()
         }
                 
-        // set corners
+        // set corners and outer mask
         switch cornerType {
         case .all:
             if depthType == .convex {
@@ -233,11 +243,53 @@ public class EMTNeumorphicLayer: CALayer {
             }
         case .topRow:
             maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+            if depthType == .convex {
+                colorLayer?.cornerRadius = cornerRadius
+                colorLayer?.maskedCorners = maskedCorners
+                applyOuterMask(bounds: bounds, props: props!)
+            }
+            else {
+                mask = nil
+            }
         case .middleRow:
             maskedCorners = []
+            if depthType == .convex {
+                applyOuterMask(bounds: bounds, props: props!)
+            }
+            else {
+                mask = nil
+            }
         case .bottomRow:
             maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+            if depthType == .convex {
+                colorLayer?.cornerRadius = cornerRadius
+                colorLayer?.maskedCorners = maskedCorners
+                applyOuterMask(bounds: bounds, props: props!)
+            }
+            else {
+                mask = nil
+            }
         }
+    }
+
+    private func applyOuterMask(bounds: CGRect, props: EMTNeumorphicLayerProps) {
+        let shadowRadius = props.elementDepth
+        let extendWidth = shadowRadius * 2
+        var maskFrame = CGRect()
+        switch props.cornerType {
+        case .all:
+            return
+        case .topRow:
+            maskFrame = CGRect(x: -extendWidth, y: -extendWidth, width: bounds.size.width + extendWidth * 2, height: bounds.size.height + extendWidth)
+        case .middleRow:
+            maskFrame = CGRect(x: -extendWidth, y: 0, width: bounds.size.width + extendWidth * 2, height: bounds.size.height)
+        case .bottomRow:
+            maskFrame = CGRect(x: -extendWidth, y: 0, width: bounds.size.width + extendWidth * 2, height: bounds.size.height + extendWidth)
+        }
+        let maskLayer = CALayer()
+        maskLayer.frame = maskFrame
+        maskLayer.backgroundColor = UIColor.white.cgColor
+        mask = maskLayer
     }
 }
 
@@ -297,10 +349,12 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
         masksToBounds = false
         mask = nil
         
+        let shadowCornerRadius = props.cornerType == .middleRow ? 0 : props.cornerRadius
+        
         // prepare shadow parameters
         let shadowRadius = props.elementDepth
         let offsetWidth: CGFloat = shadowRadius / 2
-        let cornerRadii: CGSize = CGSize(width: props.cornerRadius - offsetWidth, height: props.cornerRadius - offsetWidth)
+        let cornerRadii: CGSize = props.cornerRadius <= 0 ? CGSize.zero : CGSize(width: shadowCornerRadius - offsetWidth, height: shadowCornerRadius - offsetWidth)
     
         var shadowX: CGFloat = 0
         var shadowY: CGFloat = 0
@@ -312,11 +366,28 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
             shadowY = offsetWidth
             shadowX = offsetWidth
         }
+   
+        setCorner(props: props)
+        let corners = EMTShadowLayer.corners[props.cornerType]!
+   
+        let extendHeight = max(props.cornerRadius, shadowCornerRadius)
         
         // add shadow
-        let shadowBounds = bounds
+        var shadowBounds = bounds
+        switch props.cornerType {
+        case .all:
+            break
+        case .topRow:
+            shadowBounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height + extendHeight)
+        case .middleRow:
+            shadowY = 0
+            shadowBounds = CGRect(x: bounds.origin.x, y: bounds.origin.y - extendHeight, width: bounds.size.width, height: bounds.size.height + extendHeight * 2)
+        case .bottomRow:
+            shadowBounds = CGRect(x: bounds.origin.x, y: bounds.origin.y - extendHeight, width: bounds.size.width, height: bounds.size.height + extendHeight)
+        }
+
         let path: UIBezierPath = UIBezierPath(roundedRect: shadowBounds.insetBy(dx: offsetWidth, dy: offsetWidth),
-                                              byRoundingCorners: EMTShadowLayer.corners[.all]!,
+                                              byRoundingCorners: corners,
                                               cornerRadii: cornerRadii)
         shadowPath = path.cgPath
         shadowColor = color
@@ -324,7 +395,7 @@ fileprivate class EMTShadowLayer: EMTShadowLayerBase {
         shadowOpacity = mode == .lightSide ? props.lightShadowOpacity : props.darkShadowOpacity
         self.shadowRadius = shadowRadius
     }
-    
+
     func applyInnerShadow(bounds: CGRect, mode: EMTShadowLayerMode, props: EMTNeumorphicLayerProps, color: CGColor) {
         let width = bounds.size.width
         let height = bounds.size.height
@@ -446,6 +517,18 @@ fileprivate class EMTEdgeLayer: EMTShadowLayerBase {
         let cornerRadiiEdge: CGSize = CGSize(width: cornerRadiusEdge, height: cornerRadiusEdge)
         
         if props.depthType == .convex {
+            
+            switch props.cornerType {
+            case .all:
+                break
+            case .topRow:
+                edgeBounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height + 2)
+            case .middleRow:
+                edgeBounds = CGRect(x: bounds.origin.x, y: bounds.origin.y - 2, width: bounds.size.width, height: bounds.size.height + 4)
+            case .bottomRow:
+                edgeBounds = CGRect(x: bounds.origin.x, y: bounds.origin.y - 2, width: bounds.size.width, height: bounds.size.height + 2)
+            }
+            
             path = UIBezierPath(roundedRect: edgeBounds, byRoundingCorners: corners, cornerRadii: cornerRadii)
             let innerPath = UIBezierPath(roundedRect: edgeBounds.insetBy(dx: edgeWidth, dy: edgeWidth),
                                     byRoundingCorners: corners, cornerRadii: cornerRadiiEdge).reversing()

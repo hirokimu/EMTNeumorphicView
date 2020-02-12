@@ -63,8 +63,7 @@ public class EMTNeumorphicButton: UIButton, EMTNeumorphicElementProtocol {
  Access neumorphicLayer. Change effects via its properties.
  */
 public class EMTNeumorphicTableCell: UITableViewCell, EMTNeumorphicElementProtocol {
-    /// Change effects via its properties.
-    
+
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = UIColor.clear
@@ -73,11 +72,11 @@ public class EMTNeumorphicTableCell: UITableViewCell, EMTNeumorphicElementProtoc
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    /// Change effects via its properties.
     public var neumorphicLayer: EMTNeumorphicLayer? {
         if bg == nil {
             bg = EMTNeumorphicView(frame: bounds)
-            bg?.neumorphicLayer?.depthType = .concave
+            bg?.neumorphicLayer?.masterView = self
             selectedBackgroundView = UIView()
             layer.masksToBounds = true
             backgroundView = bg
@@ -96,5 +95,10 @@ public class EMTNeumorphicTableCell: UITableViewCell, EMTNeumorphicElementProtoc
     public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         neumorphicLayer?.selected = selected
+    }
+    public func depthTypeUpdated(to type: EMTNeumorphicLayerDepthType) {
+        if let l = bg?.neumorphicLayer {
+            layer.masksToBounds = l.depthType == .concave
+        }
     }
 }
