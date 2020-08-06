@@ -15,6 +15,7 @@
 		65B9FDF78EB66B86307DCB3DB733DC1E /* Pods-EMTNeumorphicView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E02C262000B8E93D3CA9FDF725FAA4 /* Pods-EMTNeumorphicView_Example-dummy.m */; };
 		78E7A9EAAC735B9E349C31A006B6ED30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		7B2BF2A4DD2B598ECD1BCA3D9E080C73 /* EMTNeumorphicView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CBA46EAB975B28D7CD2213B8A514FE /* EMTNeumorphicView-dummy.m */; };
+		84376F3424DCBDF6001DFB98 /* EMTNeumorphicButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84376F3324DCBDF6001DFB98 /* EMTNeumorphicButtonExtension.swift */; };
 		939FB1D58C5F4741EB4E66C579066443 /* Pods-EMTNeumorphicView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BC42DB9699815DC69C291FF20BA40DE0 /* Pods-EMTNeumorphicView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB4C23AF8C24743FB58CA993D9A37033 /* EMTNeumorphicView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 861FF2B1B6997D3EB88E9D547874AD8C /* EMTNeumorphicView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D572570A1405E02681483F2E4E34CDB7 /* EMTNeumorphicLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12254995D020B4F102997E24738D228 /* EMTNeumorphicLayer.swift */; };
@@ -58,6 +59,7 @@
 		7475248B33F101586BE64C0D21ADB3DF /* Pods-EMTNeumorphicView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EMTNeumorphicView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		755ACC0B5AD99AAB2529849064ED1FCE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		79E92D39A201A4FC00F31301D5CD2525 /* Pods-EMTNeumorphicView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EMTNeumorphicView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		84376F3324DCBDF6001DFB98 /* EMTNeumorphicButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMTNeumorphicButtonExtension.swift; sourceTree = "<group>"; };
 		861FF2B1B6997D3EB88E9D547874AD8C /* EMTNeumorphicView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EMTNeumorphicView-umbrella.h"; sourceTree = "<group>"; };
 		89294C1EF54395CBE96C05680A369094 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8EB4BCE0F0747E6F3CE90EE86FC64442 /* EMTNeumorphicView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = EMTNeumorphicView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -140,6 +142,7 @@
 		214822E2D202353D963C5EB8DB8B4355 /* EMTNeumorphicView */ = {
 			isa = PBXGroup;
 			children = (
+				84376F3224DCBDF6001DFB98 /* Extensions */,
 				B12254995D020B4F102997E24738D228 /* EMTNeumorphicLayer.swift */,
 				2DF0EA7AA531917AB54745E40328D8D6 /* EMTNeumorphicView.swift */,
 				601D114C7C7952501CD3C5EA90BAE153 /* UIColor+tool.swift */,
@@ -175,6 +178,15 @@
 			);
 			name = "Pods-EMTNeumorphicView_Example";
 			path = "Target Support Files/Pods-EMTNeumorphicView_Example";
+			sourceTree = "<group>";
+		};
+		84376F3224DCBDF6001DFB98 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84376F3324DCBDF6001DFB98 /* EMTNeumorphicButtonExtension.swift */,
+			);
+			name = Extensions;
+			path = EMTNeumorphicView/Extensions;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -393,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D572570A1405E02681483F2E4E34CDB7 /* EMTNeumorphicLayer.swift in Sources */,
+				84376F3424DCBDF6001DFB98 /* EMTNeumorphicButtonExtension.swift in Sources */,
 				7B2BF2A4DD2B598ECD1BCA3D9E080C73 /* EMTNeumorphicView-dummy.m in Sources */,
 				DBECE51AE3302A98334D9BBF65E149D0 /* EMTNeumorphicView.swift in Sources */,
 				51321813BA07355609140E23D506354D /* UIColor+tool.swift in Sources */,
